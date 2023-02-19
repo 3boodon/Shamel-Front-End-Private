@@ -1,0 +1,25 @@
+#page-topbar {
+  top: 0;
+  left: 0;
+  height: $sh-header-height;
+  background: $sh-navy-blue;
+
+  //   Decoration Image
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/decoration/header_decoration.png") no-repeat;
+    background-size: cover;
+  }
+
+  .layout-width {
+    height: 100%;
+    .navbar-header {
+      height: 100%;
+    }
+  }
+}
