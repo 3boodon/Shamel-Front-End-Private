@@ -1,0 +1,126 @@
+// 
+// _dashboard.scss
+// 
+
+.chat-sidebar {
+    width: 80px;
+}
+
+.dash-filter-picker {
+    min-width: 210px !important;
+}
+
+.jvectormap-legend-cnt-h .jvectormap-legend-tick-sample {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.selling-product {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        top: 34px;
+        width: 28px;
+        height: 28px;
+        background-color: rgba(var(--#{$prefix}primary-rgb), 0.1);
+        color: var(--#{$prefix}primary);
+        border-radius: .3rem;
+        right: 0px !important; 
+        z-index: 99; 
+    }
+
+    .swiper-button-prev {
+        right: 35px !important;
+        left: auto !important;
+    }
+}
+
+
+.animation-effect-6 {
+    position: absolute;
+    top: 10%;
+    right: 4%;
+    animation: rotating alternate ease-in-out infinite 6s;
+
+    &.left {
+        left: 4%;
+        right: auto;
+    }
+}
+
+.animation-effect-3 {
+    position: absolute;
+    top: 40%;
+    right: 35%;
+    animation: rotating2 alternate ease-in-out infinite 8s;
+
+    &.left {
+        left: 35%;
+        right: auto;
+        animation: rotatingleft alternate ease-in-out infinite 8s;
+    }
+}
+
+.animation-effect-4 {
+    position: absolute;
+    top: 40%;
+    right: 30%;
+    animation: rotating4 alternate ease-in-out infinite 7s;
+
+    &.left {
+        left: 30%;
+        right: auto;
+    }
+}
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0deg);
+        top: 75%;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        top: 0%;
+    }
+}
+
+@keyframes rotating4 {
+    0% {
+        top: 75%;
+    }
+
+    100% {
+        top: 3%;
+    }
+}
+
+@keyframes rotating2 {
+    0% {
+        transform: rotate(0deg);
+        top: 45%;
+        right: 10%;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        top: 80%;
+        right: 45%;
+    }
+}
+
+@keyframes rotatingleft {
+    0% {
+        transform: rotate(0deg);
+        top: 45%;
+        left: 10%;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        top: 80%;
+        left: 45%;
+    }
+}

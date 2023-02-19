@@ -1,0 +1,181 @@
+// 
+// root.scss
+//
+
+@mixin color-mode($mode: light, $root: false) {
+    @if $color-mode-type =="media-query" {
+        @if $root ==true {
+            @media (prefers-color-scheme: $mode) {
+                :root {
+                    @content;
+                }
+            }
+        }
+
+        @else {
+            @media (prefers-color-scheme: $mode) {
+                @content;
+            }
+        }
+    }
+
+    @else {
+        [data-bs-theme="#{$mode}"] {
+            @content;
+        }
+    }
+}
+
+//theme-light
+:root {
+    // card
+    --#{$prefix}card-logo-dark:                           block;
+    --#{$prefix}card-logo-light:                          none;
+
+    //vertical light
+    --#{$prefix}vertical-menu-bg:                         #{$white};
+    --#{$prefix}vertical-menu-border:                     #{$border-color};
+    --#{$prefix}vertical-menu-item-color:                 #{darken($gray-600, 10%)};
+    --#{$prefix}vertical-menu-item-hover-color:           var(--#{$prefix}primary);
+    --#{$prefix}vertical-menu-item-hover-bg:              var(--#{$prefix}primary);
+    --#{$prefix}vertical-menu-item-active-color:          var(--#{$prefix}primary);
+    --#{$prefix}vertical-menu-item-active-bg:             #{rgba($primary, .15)};
+    --#{$prefix}vertical-menu-sub-item-color:             #{darken($gray-600, 4%)};
+    --#{$prefix}vertical-menu-sub-item-hover-color:       var(--#{$prefix}primary);
+    --#{$prefix}vertical-menu-sub-item-active-color:      var(--#{$prefix}primary);
+    --#{$prefix}vertical-menu-title-color:                #919da9;
+
+    // Topbar - (Default Light)
+    --#{$prefix}header-bg:                                #{$white};
+    --#{$prefix}header-item-color:                        #{$gray-800};
+    --#{$prefix}header-item-sub-color:                    #{$text-muted};
+
+    // Topbar Search
+    --#{$prefix}topbar-search-bg:                         #f3f3f9;
+    // Topbar User
+    --#{$prefix}topbar-user-bg:                           #{$gray-100};
+
+    //footer
+    --#{$prefix}footer-bg:                                #{$white};
+    --#{$prefix}footer-color:                             #98a6ad;
+
+    // Horizontal nav
+    --#{$prefix}topnav-bg:                                #{$white};
+    --#{$prefix}topnav-item-color:                        #{darken($gray-600, 10%)};
+    --#{$prefix}topnav-item-color-active:                 var(--#{$prefix}primary);
+
+    // twocolumn menu
+    --#{$prefix}twocolumn-menu-iconview-bg:               #{$white};
+    --#{$prefix}twocolumn-menu-bg:                        #{$white};
+
+    // boxed 
+    --#{$prefix}boxed-body-bg:                            #f5f5f5;
+
+    &[data-sidebar="dark"] {
+        --#{$prefix}vertical-menu-bg:                       #1c2932;
+        --#{$prefix}vertical-menu-border:                   #1c2932;
+        --#{$prefix}vertical-menu-item-color:               #a2aac4;
+        --#{$prefix}vertical-menu-item-hover-color:         #{$white};
+        --#{$prefix}vertical-menu-item-hover-bg:            #1c2932;
+        --#{$prefix}vertical-menu-item-active-color:        #{$white};
+        --#{$prefix}vertical-menu-item-active-bg:           #{rgba($white, .15)};
+        --#{$prefix}vertical-menu-sub-item-color:           #a2aac4;
+        --#{$prefix}vertical-menu-sub-item-hover-color:     #{$white};
+        --#{$prefix}vertical-menu-sub-item-active-color:    #{$white};
+        --#{$prefix}vertical-menu-title-color:              #838fb9;
+        --#{$prefix}twocolumn-menu-iconview-bg:             #1c2932;
+    }
+
+    &[data-topbar="dark"] {
+        --#{$prefix}header-bg:                                #1f242e;
+        --#{$prefix}header-item-color:                        #b0c4d9;
+        --#{$prefix}topbar-user-bg:                           #{rgba($white, .05)};
+        --#{$prefix}topbar-user-color:                        #{rgba($white, .08)};
+    }
+
+    &:is([data-sidebar="gradient"], [data-sidebar="gradient-2"], [data-sidebar="gradient-3"], [data-sidebar="gradient-4"]) {
+        --#{$prefix}vertical-menu-item-color:                 #{rgba($white, .50)};
+        --#{$prefix}vertical-menu-item-hover-color:           #{$white};
+        --#{$prefix}vertical-menu-item-active-color:          #{$white};
+        --#{$prefix}vertical-menu-item-active-bg:             #{rgba($white, .15)};
+        --#{$prefix}vertical-menu-sub-item-color:             #{rgba($white, .50)};
+        --#{$prefix}vertical-menu-sub-item-hover-color:       #{$white};
+        --#{$prefix}vertical-menu-sub-item-active-color:      #{$white};
+        --#{$prefix}vertical-menu-title-color:                #{rgba($white, .50)};
+    }
+
+    &[data-sidebar="gradient"] {
+        --#{$prefix}vertical-menu-bg:                         linear-gradient(to left, #{$cyan-700}, #{$cyan-800});
+        --#{$prefix}vertical-menu-border:                     #{$cyan-700};
+        --#{$prefix}vertical-menu-item-hover-bg:              linear-gradient(to left, #{$cyan-700}, #{$cyan-800});
+        --#{$prefix}twocolumn-menu-iconview-bg:               #{$cyan-800};
+    }
+
+    &[data-sidebar="gradient-2"] {
+        --#{$prefix}vertical-menu-bg:                         linear-gradient(to left, #{$teal-700}, #{$teal-800});
+        --#{$prefix}vertical-menu-border:                     #{$teal-700};
+        --#{$prefix}vertical-menu-item-hover-bg:              linear-gradient(to left, #{$teal-700}, #{$teal-800});
+        --#{$prefix}twocolumn-menu-iconview-bg:               #{$teal-800};
+    }
+
+    &[data-sidebar="gradient-3"] {
+        --#{$prefix}vertical-menu-bg:                         linear-gradient(to left, #{$purple-700}, #{$purple-800});
+        --#{$prefix}vertical-menu-border:                     #{$purple-700};
+        --#{$prefix}vertical-menu-item-hover-bg:              linear-gradient(to left, #{$purple-700}, #{$purple-800});
+        --#{$prefix}twocolumn-menu-iconview-bg:               #{$purple-800};
+    }
+
+    &[data-sidebar="gradient-4"] {
+        --#{$prefix}vertical-menu-bg:                         linear-gradient(to right, #{$green-700}, #{$green-800});
+        --#{$prefix}vertical-menu-border:                     #{$green-700};
+        --#{$prefix}vertical-menu-item-hover-bg:              linear-gradient(to right, #{$green-700}, #{$green-800});
+        --#{$prefix}twocolumn-menu-iconview-bg:               #{$green-800};
+    }
+}
+
+//theme dark
+@if $enable-dark-mode {
+    @include color-mode(dark, true) {
+        --#{$prefix}light:                      #{$light-dark};
+        --#{$prefix}light-rgb:                  #{to-rgb($light-dark)};
+        --#{$prefix}dark:                       #{$light-dark};
+        --#{$prefix}dark-rgb:                   #{to-rgb($light-dark)};
+
+        // card
+        --#{$prefix}card-logo-dark:                           none;
+        --#{$prefix}card-logo-light:                          block;
+
+        //footer
+        --#{$prefix}footer-bg: #{$gray-800};
+        --#{$prefix}footer-color: #{$gray-600};
+
+        // Horizontal nav
+        --#{$prefix}topnav-bg:                  #1c2932;
+        --#{$prefix}topnav-item-color:          #a2aac4;
+        --#{$prefix}topnav-item-color-active:   #{$white};
+
+        // boxed 
+        --#{$prefix}boxed-body-bg:                            #{darken($body-bg-dark, 1.5%)};
+
+
+        .btn-dark {
+            --#{$prefix}btn-bg:                             #{lighten($gray-700, 1.5%)};
+            --#{$prefix}btn-border-color:                   #{lighten($gray-700, 1.5%)};
+            --#{$prefix}btn-hover-bg:                       #{lighten($gray-700, 3.5%)};
+            --#{$prefix}btn-hover-border-color:             #{lighten($gray-700, 3.5%)};
+            --#{$prefix}btn-active-bg:                      #{lighten($gray-700, 3.5%)};
+            --#{$prefix}btn-active-border-color:            #{lighten($gray-700, 3.5%)};
+            --#{$prefix}btn-disabled-bg:                    #{lighten($gray-700, 3.5%)};
+            --#{$prefix}btn-disabled-border-color:          #{lighten($gray-700, 3.5%)};
+        }
+
+        .btn-outline-dark { 
+            --#{$prefix}btn-color:                          #{$white};
+            --#{$prefix}btn-border-color:                   #{lighten($gray-700, 1.5%)};
+            --#{$prefix}btn-hover-bg:                       #{lighten($gray-700, 1.5%)};
+            --#{$prefix}btn-hover-border-color:             #{lighten($gray-700, 1.5%)};
+            --#{$prefix}btn-active-bg:                      #{lighten($gray-700, 1.5%)};
+            --#{$prefix}btn-active-border-color:            #{lighten($gray-700, 1.5%)};
+        }
+    }
+}
