@@ -1,0 +1,10 @@
+.products-table {
+  thead {
+    tr th {
+      background: $sh-table-header-bg;
+    }
+  }
+  td {
+    border: none;
+  }
+}
