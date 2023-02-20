@@ -37,7 +37,7 @@ function getChartColorsArray(chartId) {
 var chartPieBasicColors = getChartColorsArray("simple_pie_chart");
 if(chartPieBasicColors){
 var options = {
-    series: [44, 55, 13, 43, 22],
+    series: [44, 55,  43, 22],
     chart: {
         height: 300,
         type: 'pie',
@@ -86,16 +86,18 @@ chart.render();
 var chartDonutupdatingColors = getChartColorsArray("updating_donut_chart");
 if(chartDonutupdatingColors){
 var options = {
-    series: [44, 55, 13, 33],
+    series: [44, 55, 33],
     chart: {
-        height: 280,
+        height: 200,
+        width:200,
         type: 'donut',
+
     },
     dataLabels: {
         enabled: false
     },
     legend: {
-        position: 'bottom'
+        position: 'left'
     },
     colors: chartDonutupdatingColors
 };
