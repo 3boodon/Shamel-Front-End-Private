@@ -87,9 +87,10 @@ var chartDonutupdatingColors = getChartColorsArray("updating_donut_chart");
 if(chartDonutupdatingColors){
 var options = {
     series: [44, 55, 33],
+    labels:["Featured" , "Unpublished" , "Published"],
     chart: {
         height: 200,
-        width:200,
+        width:260,
         type: 'donut',
 
     },

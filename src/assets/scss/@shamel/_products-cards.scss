@@ -3,3 +3,38 @@
         font-size: 32px;
     }
 }
+.content-request-card{
+    width: 85%;;
+
+.request-card{
+    line-height: .8rem;
+    .new-request{
+            font-size: 14px;
+            font-weight: 500;
+            color: $sh-navy-blue;
+    } 
+    
+    .new-request-info,.new-request-action{
+    font-size: 14px;
+    font-weight: 500;
+    color: $sh-text-grey-100;
+    }
+    
+}}
+.review-request{
+    width: 100%;
+    text-align: center;
+    button.review{
+            background: transparent;
+    border-radius: 8px;
+    padding: 11px 9px;
+    width: 90%;
+    font-size: 16px;
+    border: 2px solid #E5E7EA;
+    font-weight: 500;
+
+        
+
+    }
+}
+
