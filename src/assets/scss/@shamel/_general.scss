@@ -5,3 +5,10 @@ body {
 .page-content {
   padding-bottom: 60px; // Footer height is 60px
 }
+
+.btn-bg-primary {
+  background: $sh-navy-blue;
+}
+.btn-bg-primary:hover {
+  background: $sh-navy-blue;
+}
